@@ -1,3 +1,5 @@
+import json
+
 def answer_yesno():
     answer = None
     flag = False
@@ -5,6 +7,7 @@ def answer_yesno():
         input_answer = input("Введите да - если ответ утвердителен.\n"
                              "Введите нет - если ответ отрицателен.\n"
                              "Ожидаю ввод: ")
+        print()
         if input_answer in ["lf", "yes", "да", "нуы"]:
             answer = input_answer
             flag = True
@@ -36,7 +39,7 @@ def answer_number():
 
 
 def main():
-    print("Вводим числа?")
+    print(local_phrase["ru"]["en_num"])
     main_answer = answer_yesno()
     if main_answer in ["lf", "yes", "да", "нуы"]:
         print(answer_number())
@@ -46,5 +49,15 @@ def main():
 
 
 if __name__ == "__main__":
-    print("Начинаем работать!")
+
+    with open("local.json", "r", encoding="utf-8") as local:
+        local_phrase = json.load(local)
+
+
+    with open(".settings", "r", encoding="utf-8") as settings:
+        set_local = settings.read().strip("\n")[6:]
+
+    print(local_phrase[set_local]["set_lang"])
+    print(local_phrase[set_local]["grt"])
+
     main()

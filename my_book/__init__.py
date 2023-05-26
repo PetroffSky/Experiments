@@ -4,9 +4,7 @@ def answer_yesno():
     answer = None
     flag = False
     while not flag:
-        input_answer = input("Введите да - если ответ утвердителен.\n"
-                             "Введите нет - если ответ отрицателен.\n"
-                             "Ожидаю ввод: ")
+        input_answer = input(local_phrase[set_local]["yes_no"])
         print()
         if input_answer in ["lf", "yes", "да", "нуы"]:
             answer = input_answer
@@ -14,7 +12,7 @@ def answer_yesno():
         elif input_answer == "exit":
             break
         else:
-            print("Введён недопустимый ответ! Повторите ввод!\n")
+            print(local_phrase[set_local]["wrong_answer"])
             flag = False
 
     return answer
@@ -24,12 +22,12 @@ def answer_number():
     mylist = []
     flag = False
     while not flag:
-        input_answer = input("Ожидаю ввод числа (для остановки, введите stop): ")
+        input_answer = input(local_phrase[set_local]["wait_num"])
         if input_answer.isalpha():
             if input_answer == "stop":
                 flag = True
             else:
-                print("Введено не число! Ошибка")
+                print(local_phrase[set_local]["not_num"])
                 break
         else:
             mylist.append(int(input_answer))
@@ -57,7 +55,7 @@ if __name__ == "__main__":
     with open(".settings", "r", encoding="utf-8") as settings:
         set_local = settings.read().strip("\n")[6:]
 
-    print(local_phrase[set_local]["set_lang"])
+    print(local_phrase[set_local]["set_lang"] + "\n")
     print(local_phrase[set_local]["grt"])
 
     main()

@@ -13,9 +13,9 @@
          "grt": "Hello! Start work!",
          "sel_lang": "Use russian language?",
          "yes_no": "Enter 'yes' - if the answer is yes.\nEnter 'no' - if the answer is negative.\nAwaiting input: ",
-         "wrong_answer": "Введён недопустимый ответ! Повторите ввод!\n",
-         "en_num": "Вводим числа?",
-         "wait_num": "Ожидаю ввод числа (для остановки, введите stop): ",
-         "not_num": "Введено не число! Ошибка",
-         "frwl": "Закончили работать! До свидания!"}
+         "wrong_answer": "Invalid response entered! Repeat the input!\n",
+         "en_num": "Are we entering numbers?",
+         "wait_num": "I am waiting for the input of a number (to stop, enter stop): ",
+         "not_num": "Not a number entered! Mistake",
+         "frwl": "Finished working! Goodbye!"}
 }
